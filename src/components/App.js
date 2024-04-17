@@ -1,12 +1,12 @@
-import React from 'react';
-import MarkdownApp from './MarkdownApp';
+import React from 'react'
+import Mark1 from './Mark1'
+import Mark2 from './Mark2'
 
-const App = () => {
-  return (
-    <div className="app">
-      <MarkdownApp />
-    </div>
-  );
-};
-
-export default App;
+let App= ()=>{
+    return (
+        <div className='app'>
+            <Mark1/>
+        </div>
+    )
+}
+export default App
