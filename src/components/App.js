@@ -6,6 +6,7 @@ let App= ()=>{
     return (
         <div className='app'>
             <Mark1/>
+            <Mark2/>
         </div>
     )
 }

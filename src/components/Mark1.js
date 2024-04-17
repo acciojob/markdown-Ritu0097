@@ -1,19 +1,25 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react';
 
-let Mark1= ()=>{
-    let [text,Settext]=useState('')
-    function changetext(event){
-        Settext(event.target.value)
-    }
+const Mark1 = () => {
+    const [text, setText] = useState('');
+
+    const handleChange = (event) => {
+        setText(event.target.value);
+    };
+
+    const parseMarkdownToHtml = (markdown) => {
+        return markdown
+            .replace(/# (.*)/g, "<h1>$1</h1>")
+            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+            .replace(/_(.*?)_/g, "<em>$1</em>");
+    };
+
     return (
         <div className='mark1'>
-            <div className='preview'>
-            <h1>Heading</h1><br></br><br></br><span>This is some <strong>bold</strong> text.</span>  
-             <textarea onChange={changetext}>
-            </textarea>   
-            </div>
+            <div className='preview' dangerouslySetInnerHTML={{ __html: parseMarkdownToHtml(text) }} />
+            <textarea value={text} onChange={handleChange} placeholder="Write your markdown here..." />
         </div>
-    )
-}
-export default Mark1
+    );
+};
+
+export default Mark1;
