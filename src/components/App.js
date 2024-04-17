@@ -13,7 +13,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="app">
+    <main className="app">
       <textarea
         name="text"
         value={text}
@@ -25,7 +25,7 @@ const App = () => {
       <div className="preview">
         {loading ? <p className="loading">Loading...</p> : <p>{text}</p>}
       </div>
-    </div>
+    </main>
   );
 };
 
