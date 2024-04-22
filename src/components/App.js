@@ -9,14 +9,13 @@ const AppComponent = () => {
 		setIsLoading(true)
 		const timer = setTimeout(() => {
 			setIsLoading(false)
-		}, 1000) // Simulating a delay of 1 second
+		}, 1000) 
 		return () => clearTimeout(timer)
 	}, [markdown])
 
 	const handleChange = (e) => {
 		setMarkdown(e.target.value)
 	}
-
 	return (
 		<div className="app">
 			<textarea
@@ -35,9 +34,7 @@ const AppComponent = () => {
 		</div>
 	)
 }
-
 const App = () => {
 	return <AppComponent />
 }
-
 export default App
