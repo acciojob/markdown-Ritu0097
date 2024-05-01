@@ -4,7 +4,6 @@ import '../styles/App.css'
 const AppComponent = () => {
 	const [markdown, setMarkdown] = React.useState('')
 	const [isLoading, setIsLoading] = React.useState(false)
-
 	React.useEffect(() => {
 		setIsLoading(true)
 		const timer = setTimeout(() => {
@@ -12,7 +11,6 @@ const AppComponent = () => {
 		}, 1000) 
 		return () => clearTimeout(timer)
 	}, [markdown])
-
 	const handleChange = (e) => {
 		setMarkdown(e.target.value)
 	}
